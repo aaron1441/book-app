@@ -5,6 +5,8 @@ import React from 'react';
 import { Content } from './components/content';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
+import { Read } from './components/read';
+import { Create } from './components/create';
 // import the components needed for the nav bar from bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -48,8 +50,8 @@ class App extends React.Component {
           <Routes>
             {/* when the url changes it shows a different component*/}
             <Route path='/' element={<Content />}></Route>
-            <Route path='/read' element={<Header />}></Route>
-            <Route path='/create' element={<Footer />}></Route>
+            <Route path='/read' element={<Read />}></Route>
+            <Route path='/create' element={<Create />}></Route>
           </Routes>
         </div>
       </Router>
