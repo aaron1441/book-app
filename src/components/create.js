@@ -4,13 +4,16 @@ import React from "react"
 // mark it for export so that it can be used in another page
 export class Create extends React.Component {
 
-    // in js must have a bind for this so that it is associated with the relevent function
+    
     constructor(){
         super();
+        // in js must have a bind for this so that it is associated with the relevent function
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onChangeBookTitle = this.onChangeBookTitle.bind(this);
         this.onChangeBookCover = this.onChangeBookCover.bind(this);
         this.onChangeBookAuthor = this.onChangeBookAuthor.bind(this);
+
+        // initialize the state variables to null
         this.state = {
             title:'',
             cover:'',
@@ -55,6 +58,7 @@ export class Create extends React.Component {
                 {/* puts the informatin to the handleSubmit method */}
                 <form onSubmit={this.handleSubmit}>
                     {/* create three inputs for the author, cover and title */}
+
                     <div className="form-group">
                         <label>Add Book Title: </label>
                         <input type="text"
@@ -63,6 +67,7 @@ export class Create extends React.Component {
                             onChange={this.onChangeBookTitle}
                         />
                     </div>
+                    {/* form input for book cover */}
                     <div className="form-group">
                         <label>Add Book Cover: </label>
                         <input type="text"
@@ -71,6 +76,8 @@ export class Create extends React.Component {
                             onChange={this.onChangeBookCover}
                         />
                     </div>
+
+                    {/* form input for book author */}
                     <div className="form-group">
                         <label>Add Book Author: </label>
                         <input type="text"
