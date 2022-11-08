@@ -10,13 +10,14 @@ export class Read extends React.Component {
         // fires when component becomes visible
         // access the the http client
         // makes a http request
-        axios.get('https://jsonblob.com/api/jsonblob/1027219693823606784')
+        // set the get to take information from the server
+        axios.get('http://localhost:4000/api/books')
         // arrow function
         // takes the response from the request in this callback function 
         // assigns the data to the books
         .then((response)=>{
             this.setState({
-                books: response.data
+                books: response.data.books
             })
         })
         .catch((error)=>{

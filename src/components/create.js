@@ -1,4 +1,5 @@
 import React from "react"
+import axios from "axios";
 
 // create a class that contains the content and extneds the react.component
 // mark it for export so that it can be used in another page
@@ -26,6 +27,19 @@ export class Create extends React.Component {
         e.preventDefault();
         // display the inputs from the form to the console
         console.log(`${this.state.title}`,`${this.state.cover}`,`${this.state.author}`);
+
+        // create a variable to pass up in the axios post
+        const book = {
+            title:this.state.title,
+            cover:this.state.cover,
+            author:this.state.author
+        }
+
+        // generate a http request to the following url
+        // using post the data will be mebdded in the body of the request
+        axios.post('http://localhost:4000/api/books',book)
+        .then()
+        .catch(); // these are left blank for now unless there is errors thrown
         // reset the variable to blank
         this.setState({
             title:'',
