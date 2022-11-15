@@ -16,9 +16,7 @@ export class Read extends React.Component {
         // takes the response from the request in this callback function 
         // assigns the data to the books
         .then((response)=>{
-            this.setState({
-                books: response.data.books
-            })
+            this.setState({books: response.data})
         })
         .catch((error)=>{
             console.log(error);

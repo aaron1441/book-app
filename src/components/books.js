@@ -9,7 +9,9 @@ export class Books extends React.Component {
         // the book.isbn gives each element a unique key which gets rid of a caution message
         return this.props.books.map(
             (book)=>{
-                return <BookItems book={book} key={book.isbn}></BookItems>
+                // must change to suit the new json format
+                //return <BookItems book={book} key={book.isbn}></BookItems>
+                return <BookItems book={book} key={book._id}></BookItems>
             }
         );
     }
